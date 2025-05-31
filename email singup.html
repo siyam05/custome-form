@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kaleido</title>
+
+  <!-- ✅ Font Awesome CDN for Social Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-xXYy6fQZ8XtNq+tn7GJmjv9kDIXSpJ2XUz+oXkB0R5s/N0kPvKg7YpDAuKJS6G7aF1DkIghXo2rWZV/fNRnGNQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    :root {
+      --white-color: #fff;
+      --dark-color: #252525;
+      --primary-color: #3b141c;
+      --secondary-color: #f3961c;
+      --light-pink-color: #faf4f5;
+      --madium-gray-color: #ccc;
+      --font-size-x1: 2rem;
+      --font-weight-seibold: 600;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f6f7;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      padding: 10px 20px;
+      animation: fadeDown 1s ease;
+    }
+
+    @keyframes fadeDown {
+      0% { transform: translateY(-100%); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .nav-logo .logo-text {
+      color: var(--white-color);
+      font-size: var(--font-size-x1);
+      font-weight: var(--font-weight-seibold);
+    }
+
+    .signup-container {
+      background: white;
+      max-width: 400px;
+      margin: 40px auto;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      animation: fadeUp 1s ease;
+    }
+
+    @keyframes fadeUp {
+      0% { transform: translateY(50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    .signup-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .social-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border: 1px solid #ccc;
+      border-radius: 30px;
+      background: white;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .social-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .social-btn img {
+      height: 18px;
+      width: 18px;
+    }
+
+    input[type=email], input[type=password] {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 13px;
+    }
+
+    .form-check {
+      margin: 10px 0;
+      font-size: 13px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn-submit:disabled {
+      background: #aaa;
+      cursor: not-allowed;
+    }
+
+    .or-divider {
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .or-divider:before,
+    .or-divider:after {
+      content: "";
+      display: inline-block;
+      width: 40%;
+      height: 1px;
+      background: #ccc;
+      vertical-align: middle;
+    }
+
+    .or-divider span {
+      margin: 0 10px;
+      font-size: 13px;
+      color: #888;
+    }
+
+    footer {
+      background-color: #222;
+      color: #fff;
+      padding: 20px 0;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 20px;
+    }
+
+    .footer-logo img {
+      max-width: 100px;
+      height: auto;
+    }
+
+    .footer-links,
+    .footer-contact,
+    .footer-social {
+      margin: 10px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .footer-social .social-icons a {
+      color: #fff;
+      font-size: 20px;
+      margin-right: 10px;
+      text-decoration: none;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid #444;
+      margin-top: 10px;
+      padding-top: 10px;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .signup-container {
+        margin: 20px;
+        padding: 15px;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar section-content">
+      <a href="index1.html" class="nav-logo">
+        <h2 class="logo-text">☕coffee</h2>
+      </a>
+    </nav>
+  </header>
+
+  <div class="signup-container">
+    <h2>Sign Up</h2>   
+    <div class="social-buttons">
+      <div class="social-btn">
+       <a href="facebook login.html" style="display: inline-flex; align-items: center; text-decoration: none; color: black; font-family: Arial, sans-serif; font-size: 14px; font-weight: 600; padding: 8px 12px; ; border-radius: 999px;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" style="width: 20px; height: 20px; display: block; margin-right: 8px;">
+  <span style="position: relative; top: -1px;">Continue with Facebook</span>
+</a>
+
+      </div>
+      <div class="social-btn">
+               <a href="google login.html" style="display: inline-flex; align-items: center; text-decoration: none; color: black; font-family: Arial, sans-serif; font-size: 14px; font-weight: 600; padding: 8px 12px; border:  border-radius: 999px;">
+  <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google" style="width: 20px; height: 20px; display: block; margin-right: 8px;">
+  <span style="position: relative; top: -1px;">Continue with Google</span>
+</a>
+      </div>
+    </div>
+    <div class="or-divider"><span>or</span></div>
+     <form action="https://formsubmit.co/siyamyyy@gmail.com" method="POST"></form>
+    <input type="email" placeholder="Email" id="signupEmail">
+    <input type="password" placeholder="Password (8 characters minimum)" id="signupPassword">
+    <input type="password" placeholder="Confirm Password" id="signupConfirm">
+    <div class="form-check">
+      <input type="checkbox" id="terms">
+      <label for="terms">
+        I agree to the <a href="#">Terms of Service</a>, <a href="#">General Terms</a>, and <a href="#">Privacy Policy</a>.
+      </label>
+    </div>
+    <div class="form-check">
+      <input type="checkbox" id="updates">
+      <label for="updates">Send me updates about remove.bg products and services.</label>
+    </div>
+    <button class="btn-submit" id="signupButton">Sign up</button>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="image/coffee.jpg" alt="Logo">
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index1.html">Home</a></li>
+          <li><a href="manu2.html">Menu</a></li>
+          <li><a href="manu2.html">Order</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p>Email: siyamyyy@gmail.com</p>
+        <p>Phone: +880 1836443434</p>
+        <p>Address: laksmipur sadar, laksmipur</p>
+      </div>
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Pizza Hut Australia. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ✅ Modal Popup -->
+  <div id="popup" style="display:none;position:fixed;top:20%;left:50%;transform:translate(-50%, -50%);background:white;padding:20px;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,0.2);z-index:1000;">
+    <h3>Welcome to our coffee shop!</h3>
+    <p>Enjoy 10% discount on your first order 🎉</p>
+    <button onclick="document.getElementById('popup').style.display='none'">Close</button>
+  </div>
+
+  <script>
+    // JavaScript interaction
+    window.addEventListener("load", function() {
+      setTimeout(() => {
+        document.getElementById("popup").style.display = "block";
+      }, 2000);
+
+      const signupBtn = document.getElementById("signupButton");
+      signupBtn.addEventListener("click", function() {
+        const email = document.getElementById("signupEmail").value;
+        const password = document.getElementById("signupPassword").value;
+        const confirm = document.getElementById("signupConfirm").value;
+        const terms = document.getElementById("terms").checked;
+
+        if (!email || !password || !confirm) {
+          alert("Please fill all fields.");
+        } else if (password !== confirm) {
+          alert("Passwords do not match.");
+        } else if (!terms) {
+          alert("You must agree to the terms.");
+        } else {
+          alert("Signed up successfully!");
+        }
+      });
+    });
+  </script>
+</body>
+</html>

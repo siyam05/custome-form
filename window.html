@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Delivery or Pickup</title>
+  <link rel="stylesheet" href="window.css">
+</head>
+<body>
+  <div class="order-container" id="orderContainer">
+    <a href="manu2.html"><div class="close-btn" id="closeButton">&times;</div></a>
+    <div class="order-header">
+      <button class="tab active" id="deliveryTab" onclick="switchTab('delivery')">Delivery</button>
+      <button class="tab" id="pickupTab" onclick="switchTab('pickup')">Pickup</button>
+    </div>
+
+    <div class="order-body">
+      <p>Enter your delivery address</p>
+      <div class="input-group">
+        <input type="text" id="addressInput" placeholder="e.g. 21 King St, Mascot">
+        <button class="order-btn">Order Now</button>
+      </div>
+
+      <div class="divider">
+        <span>or</span>
+      </div>
+
+      <p>Login for Easy Checkout</p>
+      <div class="social-icons">
+        <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google"> -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple">
+        <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.svg" alt="PayPal"> -->
+      </div>
+
+      <!-- Payment Method Section -->
+      <div class="payment-section">
+        <h3>Choose Payment Method</h3>
+        <div class="payment-methods">
+          <label>
+            <input type="radio" name="payment" value="card" checked>
+            <span>Credit/Debit Card</span>
+          </label>
+          <label>
+            <input type="radio" name="payment" value="paypal">
+            <span>PayPal</span>
+          </label>
+          <label>
+            <input type="radio" name="payment" value="googlepay">
+            <span>Google Pay</span>
+          </label>
+        </div>
+        <a href="come in soon.html"><button class="payment-btn">Proceed to Payment</button></a>
+      </div>
+    </div>
+  </div>
+  <script src="window.js"></script>
+</body>
+</html>

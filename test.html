@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaleido Login/Sign Up</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f6f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 400px;
+      overflow: hidden;
+    }
+    .tab-buttons {
+      display: flex;
+    }
+    .tab-buttons button {
+      flex: 1;
+      padding: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      background: #f0f0f0;
+      border: none;
+    }
+    .tab-buttons .active {
+      background: white;
+      border-bottom: 2px solid blue;
+    }
+    .tab-content {
+      padding: 20px;
+    }
+    .social-btn {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background: white;
+      margin-bottom: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    input[type=email], input[type=password] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    label {
+      font-size: 14px;
+    }
+    .form-check {
+      margin: 10px 0;
+      font-size: 13px;
+    }
+    .btn-submit {
+      width: 100%;
+      padding: 12px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .or-divider {
+      text-align: center;
+      margin: 10px 0;
+    }
+    .or-divider:before,
+    .or-divider:after {
+      content: "";
+      display: inline-block;
+      width: 40%;
+      height: 1px;
+      background: #ccc;
+      vertical-align: middle;
+    }
+    .or-divider span {
+      margin: 0 10px;
+      font-size: 13px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="tab-buttons">
+      <button id="loginTab" class="active" onclick="showTab('login')">Log in</button>
+      <button id="signupTab" onclick="showTab('signup')">Sign up</button>
+    </div>
+    <div class="tab-content">
+      <div id="loginForm">
+        <div class="social-btn">🔵 Continue with Facebook</div>
+        <div class="social-btn">🟥 Continue with Google</div>
+        <div class="or-divider"><span>or</span></div>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <div>
+          <input type="checkbox"> Remember me
+        </div>
+        <button class="btn-submit">Log in</button>
+      </div>
+
+      <div id="signupForm" style="display:none">
+        <div class="social-btn">🔵 Continue with Facebook</div>
+        <div class="social-btn">🟥 Continue with Google</div>
+        <div class="or-divider"><span>or</span></div>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password (8 characters minimum)">
+        <input type="password" placeholder="Password confirmation">
+        <div class="form-check">
+          <input type="checkbox"> I agree to the <a href="#">Terms of Service</a>, <a href="#">General Terms</a> and <a href="#">Privacy Policy</a>.
+        </div>
+        <div class="form-check">
+          <input type="checkbox"> Send me updates about remove.bg products and services.
+        </div>
+        <button class="btn-submit">Sign up</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showTab(tab) {
+      const loginTab = document.getElementById("loginTab");
+      const signupTab = document.getElementById("signupTab");
+      const loginForm = document.getElementById("loginForm");
+      const signupForm = document.getElementById("signupForm");
+
+      if(tab === 'login') {
+        loginForm.style.display = 'block';
+        signupForm.style.display = 'none';
+        loginTab.classList.add('active');
+        signupTab.classList.remove('active');
+      } else {
+        loginForm.style.display = 'none';
+        signupForm.style.display = 'block';
+        loginTab.classList.remove('active');
+        signupTab.classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>

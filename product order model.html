@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Order Modal</title>
+  <link rel="stylesheet" href="product order model.css">
+</head>
+<body>
+  <!-- Product Image -->
+  <div class="product" onclick="openModal()">
+    <img src="image/gallery-1.jpg" alt="Pizza" class="product-img">
+    <h2 class="product-title">The Works with a Beetroot Relish Drizzle</h2>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">×</span>
+      <div class="modal-left">
+        <img src="image/gallery-1.jpg" alt="Pizza" class="modal-img">
+      </div>
+      <div class="modal-right">
+        <h2>Hot coffee</h2>
+        <p>Grinder: To grind whole coffee beans for maximum freshness.Milk/Frother: For lattes or cappuccinos.Sweeteners: Sugar, honey, or syrups.
+          Spices: Cinnamon, nutmeg, or cocoa powder for flavor..</p>
+        
+        <h3>Crust</h3>
+        <select>
+          <option>Large Original Pan</option>
+          <option>Thin Crust</option>
+          <option>Cheese Stuffed Crust</option>
+        </select>
+
+        <h3>Type</h3>
+        <select>
+          <option>With suger</option>
+          <option>without suger</option>
+          <option>cold coffee</option>
+        </select>
+
+        <h3>Ingredients</h3>
+        <div class="ingredient">
+          <p>Bacon Rashers (Included, add more for $3.95)</p>
+          <button class="qty-btn" onclick="decreaseQty('bacon')">-</button>
+          <span id="bacon">1</span>
+          <button class="qty-btn" onclick="increaseQty('bacon')">+</button>
+        </div>
+        <div class="ingredient">
+          <p>Beef (Included, add more for $2.95)</p>
+          <button class="qty-btn" onclick="decreaseQty('beef')">-</button>
+          <span id="beef">1</span>
+          <button class="qty-btn" onclick="increaseQty('beef')">+</button>
+        </div>
+        <!-- Add more ingredients as needed -->
+
+        <a href="window.html"><button class="order-btn">Start your order</button></a>
+      </div>
+    </div>
+  </div>
+
+  <script src="product order model.js"></script>
+</body>
+</html>
